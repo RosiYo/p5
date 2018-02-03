@@ -8,7 +8,7 @@ function Snake() {
   this.last=0;
   this.print=0;
 
-  this.eat = function(pos) {
+  this.eat = function(pos) { //function of what apens if the snake eat food
     var d = dist(this.x, this.y, pos.x, pos.y);
     if (d < 1) {
       this.total++;
@@ -18,12 +18,12 @@ function Snake() {
     }
   }
 
-  this.dir = function(x, y) {
+  this.dir = function(x, y) { //It's where the directios are recived
     this.xspeed = x;
     this.yspeed = y;
   }
 
-  this.death = function() {
+  this.death = function() { //What happen if the snake die
     for (var i = 0; i < this.tail.length; i++) {
       var pos = this.tail[i];
       var d = dist(this.x, this.y, pos.x, pos.y);
@@ -46,7 +46,7 @@ function Snake() {
     }
   }
 
-  this.update = function() {
+  this.update = function() { //This function updates the position of the snake
     for (var i = 0; i < this.tail.length - 1; i++) {
       this.tail[i] = this.tail[i + 1];
     }
@@ -61,7 +61,7 @@ function Snake() {
     this.y = constrain(this.y, 0, height - scl);
   }
 
-  this.show = function() {
+  this.show = function() { //This is the display of the snake
     fill(255,232,15);
     for (var i = 0; i < this.tail.length; i++) {
       rect(this.tail[i].x, this.tail[i].y, scl, scl);
@@ -69,7 +69,7 @@ function Snake() {
     rect(this.x, this.y, scl, scl);
   }
 
-  this.tx = function() {
+  this.tx = function() { //Is the score at the upper left corner
     textAlign(LEFT);
     fill(255);
     textSize(18);
@@ -78,8 +78,8 @@ function Snake() {
     fill(255,0,100);
   }
 
-  this.ls = function(){
-    if(this.print<this.last){
+  this.ls = function(){ //And this is the text of the bottom of the canvas
+    if(this.print<this.last){ //The best score
       textAlign(LEFT);
       fill(100,230,40);
       text("BEST SCORE: "+ this.last, 450,550,200,200);
@@ -92,8 +92,9 @@ function Snake() {
       // console.log("print") //testing
     }
 
-    textAlign(LEFT);
+    textAlign(LEFT); //the last score
     fill(65,180,225);
     text("LAST SCORE: " + this.last,10,550,200,200);
   }
 }
+  //Made by Rosi
