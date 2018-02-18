@@ -1,2 +1,2 @@
 # p5_PROJECTS
-I usually upload code every week
+Just a begginer code made by me
