@@ -3,7 +3,7 @@
 
 let rows
 let cols
-let w = 60
+let w = 20
 let grid = []
 let current
 let stack = []
@@ -19,7 +19,7 @@ function setup() {
       grid.push(cell) //pus the cell object into the grid array
     }
   }
-  //frameRate(8)
+  frameRate(100)
   current = grid[0] //start point
 }
 
